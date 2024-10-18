@@ -22,17 +22,19 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 /// # Safety
 ///
 /// The `address` must contain a mutable reference to a valid `u32` value.
+/// The caller must ensure that the pointer is valid and points to a writable `u32` value.
+/// Dereferencing an invalid or null pointer can cause undefined behavior.
 unsafe fn modify_by_address(address: usize) {
-    // TODO: Fill your safety notice of the code block below to match your
-    // code's behavior and the contract of this function. You may use the
-    // comment of the test below as your format reference.
+    // SAFETY: The caller guarantees that `address` points to a valid `u32` value,
+    // and it is safe to dereference and modify it.
     unsafe {
-        todo!("Your code goes here")
+        let ptr = address as *mut u32;
+        // Modify the value at the address to `0xAABBCCDD`.
+        *ptr = 0xAABBCCDD;
     }
 }
 

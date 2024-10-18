@@ -1,7 +1,5 @@
 // variables2.rs
-//
-// Execute `rustlings hint variables2` or use the `hint` watch subcommand for a
-// hint.
+// Execute `rustlings hint variables2` or use the `hint` watch subcommand for a hint.
 
 
 fn main() {
@@ -11,4 +9,4 @@ fn main() {
     } else {
         println!("x is not ten!");
     }
-}
+} 
